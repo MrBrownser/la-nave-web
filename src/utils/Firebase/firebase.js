@@ -1,24 +1,20 @@
 import app from 'firebase/app';
 import 'firebase/auth';
-import 'firebase/firestore';
-import 'firebase/functions';
+import 'firebase/database';
 
 import config from '../../../firebaseConfig';
-
 class Firebase {
   constructor() {
     app.initializeApp(config);
 
     /* Helper */
 
-    this.fieldValue = app.firestore.FieldValue;
     this.emailAuthProvider = app.auth.EmailAuthProvider;
 
     /* Firebase APIs */
 
     this.auth = app.auth();
-    this.db = app.firestore();
-    this.functions = app.functions();
+    this.db = app.database();
 
     /* Social Sign In Method Provider */
 
@@ -60,37 +56,37 @@ class Firebase {
 
   onAuthUserListener = (next, fallback) =>
     this.auth.onAuthStateChanged(authUser => {
-      if (authUser) {
-        this.user(authUser.uid)
-          .get()
-          .then(snapshot => {
-            const dbUser = snapshot.data();
+      // if (authUser) {
+      //   this.user(authUser.uid)
+      //     .get()
+      //     .then(snapshot => {
+      //       const dbUser = snapshot.data();
 
-            // merge auth and db user
-            authUser = {
-              uid: authUser.uid,
-              email: authUser.email,
-              emailVerified: authUser.emailVerified,
-              providerData: authUser.providerData,
-              ...dbUser,
-            };
+      //       // merge auth and db user
+      //       authUser = {
+      //         uid: authUser.uid,
+      //         email: authUser.email,
+      //         emailVerified: authUser.emailVerified,
+      //         providerData: authUser.providerData,
+      //         ...dbUser,
+      //       };
 
-            next(authUser);
-          });
-      } else {
-        fallback();
-      }
+      //       next(authUser);
+      //     });
+      // } else {
+      //   fallback();
+      // }
     });
 
   // *** User API ***
 
-  user = uid => this.db.doc(`users/${uid}`);
+  // user = uid => this.db.doc(`users/${uid}`);
 
-  users = () => this.db.collection('users');
+  // users = () => this.db.collection('users');
 
-  posts = () => this.db.collection('posts');
+  // posts = () => this.db.collection('posts');
 
-  post = post => this.posts().where('slug', '==', post.slug);
+  // post = post => this.posts().where('slug', '==', post.slug);
 }
 
 let firebase;

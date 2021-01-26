@@ -21,25 +21,25 @@ exports.createPages = async ({ graphql, actions }) => {
         const Template = path.resolve(
           `./src/templates/${fileName}.js`,
         );
-        await app
-          .firestore()
-          .collection(collection)
-          .get()
-          .then(async querySnapshot => {
-            await Promise.all(
-              querySnapshot.docs.map(async item => {
-                const itemData = item.data();
-                await createPage({
-                  path: `${routePath}/${itemData[param]}`,
-                  component: Template,
-                  context: context.reduce((acc, curr) => {
-                    acc[curr] = itemData[curr];
-                    return acc;
-                  }, {}),
-                });
-              }),
-            );
-          });
+        // await app
+        //   .firestore()
+        //   .collection(collection)
+        //   .get()
+        //   .then(async querySnapshot => {
+        //     await Promise.all(
+        //       querySnapshot.docs.map(async item => {
+        //         const itemData = item.data();
+        //         await createPage({
+        //           path: `${routePath}/${itemData[param]}`,
+        //           component: Template,
+        //           context: context.reduce((acc, curr) => {
+        //             acc[curr] = itemData[curr];
+        //             return acc;
+        //           }, {}),
+        //         });
+        //       }),
+        //     );
+        //   });
       },
     ),
   );
