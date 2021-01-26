@@ -14,8 +14,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `Entrenos La Nave`,
+        short_name: `La-Nave`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
