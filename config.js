@@ -1,43 +1,46 @@
 'use strict';
 
+const url = 'https://entrenos-la-nave.netlify.app/';
+const title = 'Entrenos La Nave';
+const subtitle = 'App web creada con la finalidad de ponernos de acuerdo en la afluencia de los entrenos en La Nave.';
+
 module.exports = {
-  siteUrl: 'https://naughty-clarke-9af4d5.netlify.com',
+  siteUrl: url,
   app: {
-    url: 'http://gatsby.com',
-    title: 'gatsby-firebase-starter',
-    description: 'gatsby-firebase-starter',
-    titleTemplate: 'gatsby-firebase-starter',
-    subtitle:
-      'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-    copyright: '© All rights reserved.',
+    url: url,
+    title: title,
+    description: subtitle,
+    titleTemplate: title,
+    subtitle: subtitle,
+    copyright: '© Todos los derechos reservados.',
     disqusShortname: '',
     postsPerPage: 4,
-    image: 'gatsby-firebase-starter',
-    twitterUsername: 'gatsby-firebase-starter',
+    image: 'no-image',
+    twitterUsername: 'browncaser',
   },
   home: {
-    url: 'http://gatsby-firebase-starter.com',
-    title: 'gatsby-firebase-starter',
-    description: 'gatsby-firebase-starter',
-    titleTemplate: 'gatsby-firebase-starter',
+    url: url,
+    title: title,
+    description: subtitle,
+    titleTemplate: title,
     subtitle:
-      'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-    copyright: '© All rights reserved.',
+      subtitle,
+    copyright: '© Todos los derechos reservados.',
     disqusShortname: '',
     postsPerPage: 4,
-    image: 'gatsby-firebase-starter',
-    twitterUsername: 'gatsby-firebase-starter',
+    image: 'no-image',
+    twitterUsername: 'browncaser',
   },
   author: {
-    name: 'Ovidiu-Mihai Belciug',
+    name: 'Adrià Castany Serrano',
     photo: '/photo.jpg',
     bio:
-      'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+      'Bboy and 2 wheels vehicles fan. Startup Lover and Tutti-frutti developer.',
     contacts: {
       email: '#',
       telegram: '#',
-      twitter: '#',
-      github: 'ovidiumihaibelciug',
+      twitter: 'browncaser',
+      github: 'MrBrownser',
       rss: '#',
       vkontakte: '#',
     },
