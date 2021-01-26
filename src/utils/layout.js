@@ -17,9 +17,9 @@ class Layout extends Component {
     const database = import('firebase/database');
 
     Promise.all([app, auth, database]).then(values => {
-      const firebase = getFirebase(values[0]);
+      // const firebase = getFirebase(values[0]);
 
-      this.setState({ firebase });
+      // this.setState({ firebase });
     });
   }
 
