@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-firebase-starter",
-  "description": "Starter for Authentication and creating Dynamic pages from collections with Firebase and Gatsby.js",
+  "name": "entrenos-la-nave",
+  "description": "App web creada con la finalidad de ponernos de acuerdo en la afluencia de los entrenos en La Nave.",
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
